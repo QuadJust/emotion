@@ -1,4 +1,4 @@
-package jp.just.jolt.emotions.repository;
+package jp.emotion.repository;
 
 import java.io.BufferedReader;
 import java.io.IOException;

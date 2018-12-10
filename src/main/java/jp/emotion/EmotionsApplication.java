@@ -1,4 +1,4 @@
-package jp.just.jolt.emotions;
+package jp.emotion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

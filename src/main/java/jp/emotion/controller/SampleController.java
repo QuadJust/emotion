@@ -1,4 +1,4 @@
-package jp.just.jolt.emotions.controller;
+package jp.emotion.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import jp.just.jolt.emotions.repository.YoutubeRepository;
+import jp.emotion.repository.YoutubeRepository;
 
 @Controller
 public class SampleController {
