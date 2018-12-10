@@ -1,0 +1,47 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven {
+            url 'http://google-api-client-libraries.appspot.com/mavenrepo'
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'jp.just.jolt'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://google-api-client-libraries.appspot.com/mavenrepo'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'com.google.apis:google-api-services-youtube:v3-rev151-1.20.0'
+    compile 'com.google.apis:google-api-services-youtubeAnalytics:v1-rev53-1.20.0'
+    //compile 'com.google.apis:google-api-services-youtube'
+    //compile 'com.google.apis:google-api-services-oauth2'
+    //compile 'com.google.api-client:google-api-client'
+    //compile "org.deeplearning4j:deeplearning4j-core:1.0.0-beta2"
+    runtime 'com.h2database:h2'
+    compileOnly 'org.projectlombok:lombok' 
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    
+}

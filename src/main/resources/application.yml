@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:emotions;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    platform: h2
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n/messages
+    #cache-seconds: -1
+    encoding: UTF-8
+  mail:
+    host: 127.0.0.1
+    port: 25
+    username: portal-admin
+    password: Inet!2015
+    properties:
+      mail:
+        smtp:
+          auth: false
+          ssl:
+            enable: false
+          starttls:
+            enable: false
+  mail:
+    host: 127.0.0.1
+    port: 25
+    username: master
+    password: 
+    properties:
+      mail:
+        smtp:
+          auth: false
+          ssl:
+            enable: false
+          starttls:
+            enable: false
+    ##Local
+    send-enable: false
+    #send-enable: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+  mvc:
+    favicon:
+      enabled: false
+  session: 
+    timeout: 3600
+  flyway:
+    enabled: true

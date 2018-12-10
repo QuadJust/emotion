@@ -1,0 +1,15 @@
+CREATE TABLE em_user (
+  em_user_id int(32) NOT NULL AUTO_INCREMENT,
+  email varchar(256) NOT NULL,
+  password varchar(64) DEFAULT NULL,
+  fname varchar(32) NOT NULL,
+  lname varchar(32) NOT NULL,
+  device_identifier varchar(32) DEFAULT NULL,
+  locked tinyint(1) DEFAULT '0',
+  created int(32) DEFAULT NULL,
+  created_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  modified int(32) DEFAULT NULL,
+  modified_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (user_id),
+  UNIQUE KEY email (email),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
