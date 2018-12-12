@@ -2,8 +2,10 @@ package jp.emotion.repository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Properties;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +17,9 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.YouTube.Activities;
+import com.google.api.services.youtube.YouTube.Captions;
+import com.google.api.services.youtube.YouTube.Search;
 import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
 
@@ -35,7 +40,16 @@ public class YoutubeRepository {
     /** Global instance of Youtube object to make all API requests. */
     private static YouTube youtube;
 
-
+    public void test() {
+    	youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpRequestInitializer() {
+            public void initialize(HttpRequest request) throws IOException {}
+          }).setApplicationName("youtube-cmdline-search-sample").build();
+    	Activities activities = youtube.activities();
+    	Captions captions = youtube.captions();
+    	
+    }
+    
+    
     /**
      * Initializes YouTube object to search for videos on YouTube (Youtube.Search.List). The program
      * then prints the names and thumbnails of each of the videos (only first 50 videos).
@@ -44,7 +58,7 @@ public class YoutubeRepository {
      */
     public List<SearchResult> searchByKeyword(String queryTerm) {
       // Read the developer key from youtube.properties
-      /*Properties properties = new Properties();
+      Properties properties = new Properties();
       try {
         InputStream in = Search.class.getResourceAsStream("/" + PROPERTIES_FILENAME);
         properties.load(in);
@@ -53,7 +67,7 @@ public class YoutubeRepository {
         System.err.println("There was an error reading " + PROPERTIES_FILENAME + ": " + e.getCause()
             + " : " + e.getMessage());
         System.exit(1);
-      }*/
+      }
 
       try {
         /*

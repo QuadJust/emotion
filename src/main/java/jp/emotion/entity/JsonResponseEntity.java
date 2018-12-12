@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-@Entity
+@Data
 public class JsonResponseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     

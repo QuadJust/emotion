@@ -16,9 +16,9 @@ public class SampleController {
     
     @RequestMapping(value = "/sample", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public Object sample(@RequestParam String arg) {
+    public Object sample(@RequestParam(required = false) String arg) {
+    	youtubeRepository.test();
         return null; 
-        //return youtubeRepository.searchByKeyword(arg);
     }
     
 }

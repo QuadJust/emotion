@@ -14,8 +14,8 @@ spring:
   mail:
     host: 127.0.0.1
     port: 25
-    username: portal-admin
-    password: Inet!2015
+    username: root
+    password: XXXX
     properties:
       mail:
         smtp:
@@ -24,22 +24,6 @@ spring:
             enable: false
           starttls:
             enable: false
-  mail:
-    host: 127.0.0.1
-    port: 25
-    username: master
-    password: 
-    properties:
-      mail:
-        smtp:
-          auth: false
-          ssl:
-            enable: false
-          starttls:
-            enable: false
-    ##Local
-    send-enable: false
-    #send-enable: true
   jpa:
     hibernate:
       ddl-auto: none
